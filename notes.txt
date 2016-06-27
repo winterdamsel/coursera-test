@@ -1,0 +1,214 @@
+.blue{}  ---> Class
+#what {} selector
+
+
+
+class = "blue"
+
+id="what"
+ID is the least reusble one
+CSS rules can be defined by multiple selectors
+A CSS rule can be applied to multiple selectors
+
+
+selector.class
+section > article {}
+This will address all the articles who are an immediate child of 'section'
+
+Good examples:
+div.makemeblue p{}
+div > div > p {}
+div p{}
+div > p{}
+--------------------------------------------------------
+PseudoClass selector
+selector:pseudo-class{}
+
+header li{
+	list-style:none;
+}
+
+LINKS HAVE STATES!!!
+
+a:link, a:visited{
+	text-decoration: none; << for the underline to be gone
+	background-color: green;
+	border: 1px solid blue;
+	color: black;
+	display: block; <<<- like fill_parent
+	margin-bottom: 1px;
+}
+
+a:hover, a:active {
+	background-color: blue;
+	color: white;
+}
+
+head li:nth-child(3){ <<< Applies to the 3rd element of the list within the header
+
+	font-size: 24px;
+}
+
+
+section div:nth-child(odd){
+	background-color: gray;    << sets background of odd elements
+}
+
+section div:nth-child(4):hover{
+	background-color:green;
+	cursor: pointer;
+}
+
+
+------------------------------
+SPECIFYING STYLES
+------------------------------
+
+<p style="text-align: center;">
+
+External stylesheets have all the CSS rules.
+
+How to put it in the HTML? Declare it in the HEAD tag
+<link rel="stylesheet" href="style.css">
+
+ORIGIN: Last declaration wins
+MERGE: Different properties on the same element, merge
+INHERITANCE: All child elements inherit the property of the parent
+SPECIFICITY: Most specific selector combo wins - style > ID > class > # of elements (div p {})
+
+div #myParag {
+	color: blue;
+}
+style =0, ID = 1 (#myParag), class= 0, elements (1)
+
+div.big p {
+	color: blue;
+}
+style =0, ID = 0, class= 1(big), elements (2)
+---------------> !important ---------> only for emergencies
+
+font-family: "Times New Roman", Times, serif;
+color: #458F22;
+font-style: italic;
+font-weight: bold;
+font-size: 24px;  120% or 2emBo
+text-transform: capitalize;
+text-align: center;
+
+Box model-- HTML is all linear layout.
+border: 5px solid black;
+margin: 10px;
+width: 300px;
+box-sizing: border-box;  <<<<-------- DOES NOT GET INHERITED. Sets the whole width to the value of 'width', with margins and paddings included
+
+Star selector: Afuerzas se las pone a todos 
+	*{
+		box-sizing: border-box
+	}
+The larger margin wins
+
+
+overflow: visible; hidden; auto (puts scrollbars); scroll;
+
+background-image: url("someg.png");
+background-repeat: no-repeat;
+background-position: top right; <<---- if only 1, it defaults at center
+background: url("someg.png") no-repeat right center blue;
+
+float: right; elements are taken out of the document flow
+clear: left;  Eats the floating elements 
+width by percentage and float make things MORE RESPONSIVE
+
+----------------------------------------------------------
+
+POSITIONING SCHEMES
+
+-Normal/Static
+-Relative (top, bottom, left, right)
+
+position: relative; <<< From its original position. Relative to the nearest ancestor.
+position: absolute; <<< Remains without offsets.  Only works if the ancestor has relative or absolute position specified (meaning, no static value)
+-----------------------------------------------------------
+
+MEDIA QUERIES-> Target devices. 
+Set these in the bottom of the stylesheet.
+If the statement in the parentheses is true, then the style will be applied. The last thing stated is the one that takes over. 
+
+
+@media (max-width : 767px) and (orientation: vertical){   <<< 'and' is a real operator ',' is OR
+	p {
+		color: blue;  
+	}
+}
+
+DON'T OVERLAP BOUNDARIES
+
+12-Column Grid Layout
+
+col-SIZE-SPAN   SIZE: Screen width range identifier SPAN: Number of columns from 1 to 12
+
+.container
+	.row-no-negative-margin ---> looks weird
+	.row ----> stretches beyond the container and content with columns looks aligned
+		columns with padding
+
+@media (min-width: 1200px){
+	.col-lg-1, .col-lg-2{
+		float: left;
+		}
+	.col-lg-1{
+		width: 8.33%;
+	}
+}
+
+.col-md-1
+
+To make the phone browser take the responsive rules
+<meta name="viewport" content="width-device-width, initial-scale=1">
+--------------------------------------------------------------------------------------------
+
+Navbar Header
+
+<nav class="navbar navbar-default">
+	<div class="navbar-header">
+
+class="pull-left" ---> Es como float left en bootstrap
+text-shadow. 1px 1px 1px #222
+
+class="visible-md" Makes item visible ONLY in Medium size screens
+	visible-lg
+	
+class="navbar-toggle" Controls the position of the navigation button
+
+data-toggle
+data-target --->To set the id of the element that will be displayed once it toggles
+	data-target="#something"
+	add "navbar-collapse"
+	
+class="glyphicon"  to make image elements behave like 
+
+
+font-size: 5vw; --->> More responsive
+
+#id sometype someotherType { ---> This means "apply this to the SomeOtherTtype elements inside the SomeType inside the #Id element"
+}
+
+-----------------------------------------------
+jumbotron - in bootstrap, the really big image
+
+How to get things to the bottom of the div?
+position:absolute;
+bottom: 0;
+right: 0;
+width: 100%;
+
+Bound elements to the size of the image/ center the image
+width: in pixels;
+margin: 0 auto Xpx;
+
+overflow: hidden; --->> Si algo se sale del área, este feature nomás lo corta
+
+------------------------------------------------
+
+#idhere + div {  ---->>> Se le aplica esto al 'idhere' y al elemento 'div' que le sigue
+}

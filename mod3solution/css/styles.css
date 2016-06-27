@@ -1,0 +1,85 @@
+
+#header-nav{
+	min-height:100px;
+	background-color: #EA1D32;
+
+}
+
+h1{
+	color:white;
+}
+
+#title{
+	text-align: center;
+	width: 100%;
+}
+
+#sectionTitle {
+	color:black;
+}
+
+#maintext {
+	height:1000px;
+	width:100%;
+	background-color: #EEAA63;
+	padding: 2%;
+	margin: 3% auto 1%;
+}
+
+#nav-list{
+	width:100%;
+	background-color: #FC8B0A;
+}
+
+#nav-list p:hover{
+	width:100%;
+	background-color: #F00000;
+}
+
+.navbar-nav {
+    margin:1px -200px 1px -15px;
+}
+
+#collapsable-nav {
+	width:100%;
+	margin-right: -150px;
+}
+
+.bottom-align {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.navbar-default, .navbar-default .navbar-header{
+  min-height:100px;
+}
+
+#foodtype {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+@media (min-width: 1200px){}
+
+@media (min-width: 992px) and (max-width: 1199px){}
+
+@media (min-width: 768px) and (max-width: 991px){}
+
+@media (max-width: 767px){
+#maintext {
+	height:1000px;
+	width:100%;
+	background-color: #EEAA63;
+	padding: 2%;
+}
+}
+
+@media (max-width: 479px){
+#maintext {
+	height:1000px;
+	width:100%;	
+	background-color: #EEAA63;
+	padding: 2%;
+}
+}
