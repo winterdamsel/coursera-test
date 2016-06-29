@@ -27,7 +27,7 @@ h1{
 }
 
 #nav-list{
-	width:100%;
+	width:auto;
 	background-color: #FC8B0A;
 }
 
@@ -37,12 +37,12 @@ h1{
 }
 
 .navbar-nav {
-    margin:1px -200px 1px -15px;
+    margin:1px -15px 1px -15px;
 }
 
 #collapsable-nav {
-	width:100%;
-	margin-right: -150px;
+	width:auto;
+
 }
 
 .bottom-align {
